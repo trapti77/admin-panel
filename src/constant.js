@@ -1,1 +1,1 @@
-export const DB_NAME="doctoradd"
+export const DB_NAME=""

@@ -1,15 +1,17 @@
-import dotenv from "dotenv";
-import connectdb from "./db/register.js";
-import app from "./app.js";
+import dotenv from "dotenv"
+import connectDB from "./db/register.js"
+import {app} from './app.js'
 
-dotenv.config({ path: "./.env" });
+dotenv.config({
+    path:'./.env'
+})
 
-connectdb()
+connectDB()
     .then(() => {
-        app.listen(process.env.PORT || 8000,() => {
-            console.log("server running at port", process.env.PORT);
-      })
+        app.listen(process.env.PORT ||8000, () => {
+            console.log(`server is running at port : ${process.env.PORT}`)
+        })
     })
     .catch((err) => {
-        console.log("database connection failed ", err);
+    console.log("mongodb connection failed !!!",err)
 })
